@@ -55,8 +55,12 @@ public class DataComparisonFormController {
 		
 		try {
 			
+			Context.addProxyPrivilege("Manage Concepts");
+			Context.addProxyPrivilege("View Concepts");
 			Object existingItem = httpRequest.getSession().getAttribute("existingItem");
 			Object incomingItem = httpRequest.getSession().getAttribute("incomingItem");
+			Context.removeProxyPrivilege("Manage Concepts");
+			Context.removeProxyPrivilege("View Concepts");
 	    	
 	    	if ((existingItem != null) && (incomingItem != null)) {
 	    		

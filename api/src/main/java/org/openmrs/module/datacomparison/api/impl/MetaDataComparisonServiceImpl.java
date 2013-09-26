@@ -60,7 +60,7 @@ public class MetaDataComparisonServiceImpl extends BaseOpenmrsService implements
 		RowMeta rowMeta = null;
 		Map<String, ElementMeta> metaItems = null;
 		
-		Class c = existingItem.getClass();
+		Class c = incomingItem.getClass();
 		List<Field> fields = Reflect.getAllFields(c);
 		
 		for (int i=0; i<fields.size(); i++) {
@@ -970,7 +970,7 @@ public class MetaDataComparisonServiceImpl extends BaseOpenmrsService implements
 				
 				// OpenMRS object type property
 				
-				Class childClass = existingItemPropertyValue.getClass();
+				Class childClass = incomingItemPropertyValue.getClass();
 				List<Field> childClassFields = Reflect.getAllFields(childClass);
 				ElementMeta existingChildElementMeta;
 				ElementMeta incomingChildElementMeta;
